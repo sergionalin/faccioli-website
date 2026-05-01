@@ -1020,11 +1020,12 @@ h3 {
   }
 
   .product-gallery {
+    grid-template-columns: 1fr;
     gap: 10px;
   }
 
   .product-gallery .image-tile img {
-    height: 126px;
+    height: 205px;
   }
 
   .product-gallery .image-tile figcaption {
