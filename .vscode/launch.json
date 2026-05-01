@@ -5,8 +5,8 @@
       "type": "pwa-chrome",
       "request": "launch",
       "name": "Open Facciol'idraulico",
-      "file": "${workspaceFolder}/web/index.html",
-      "webRoot": "${workspaceFolder}/web"
+      "file": "${workspaceFolder}/docs/index.html",
+      "webRoot": "${workspaceFolder}/docs"
     }
   ]
 }
