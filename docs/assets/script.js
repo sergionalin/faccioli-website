@@ -1,9 +1,11 @@
+document.documentElement.classList.add("js");
+
 const toggle = document.querySelector("[data-menu-toggle]");
 const nav = document.querySelector("[data-nav]");
 const year = document.querySelector("[data-year]");
 const form = document.querySelector("[data-contact-form]");
 const navLinks = document.querySelectorAll("[data-nav-link]");
-const galleryButtons = document.querySelectorAll("[data-gallery-scroll]");
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if (year) {
   year.textContent = new Date().getFullYear();
@@ -23,110 +25,132 @@ if (navLinks.length) {
 }
 
 if (toggle && nav) {
-  toggle.addEventListener("click", () => {
-    const isOpen = toggle.getAttribute("aria-expanded") === "true";
-    toggle.setAttribute("aria-expanded", String(!isOpen));
-    nav.classList.toggle("is-open", !isOpen);
-    document.body.classList.toggle("menu-open", !isOpen);
-  });
+  const setMenu = (open) => {
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.setAttribute("aria-label", open ? "Chiudi menu" : "Apri menu");
+    nav.classList.toggle("is-open", open);
+    document.body.classList.toggle("menu-open", open);
+  };
+  setMenu(false);
+
+  toggle.addEventListener("click", () => setMenu(toggle.getAttribute("aria-expanded") !== "true"));
 
   nav.addEventListener("click", (event) => {
-    if (event.target.matches("a")) {
-      toggle.setAttribute("aria-expanded", "false");
-      nav.classList.remove("is-open");
-      document.body.classList.remove("menu-open");
+    if (event.target.closest("a")) {
+      setMenu(false);
     }
   });
+
+  document.addEventListener("keydown", (event) => {
+    if (toggle.getAttribute("aria-expanded") !== "true") return;
+    if (event.key === "Escape") {
+      setMenu(false);
+      toggle.focus();
+    }
+    if (event.key === "Tab") {
+      const last = nav.querySelector("a:last-child");
+      if (event.shiftKey && document.activeElement === toggle) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        toggle.focus();
+      }
+    }
+  });
+  document.addEventListener("click", (event) => {
+    if (!event.target.closest(".site-header")) setMenu(false);
+  });
+  window.matchMedia("(max-width: 1080px)").addEventListener("change", () => setMenu(false));
+}
+
+function createEmailUrl(name, email, message) {
+  const subject = encodeURIComponent("Richiesta preventivo dal sito");
+  const body = encodeURIComponent(`Nome: ${name.trim()}\nEmail: ${email.trim()}\n\nMessaggio:\n${message.trim()}`);
+  return `mailto:info@facciolidraulico.it?subject=${subject}&body=${body}`;
 }
 
 if (form) {
+  form.querySelector("[data-email-submit]").hidden = false;
   form.addEventListener("submit", (event) => {
     event.preventDefault();
+    if (!form.reportValidity()) return;
 
     const data = new FormData(form);
     const name = data.get("name") || "";
     const email = data.get("email") || "";
     const message = data.get("message") || "";
-    const subject = encodeURIComponent("Richiesta preventivo dal sito");
-    const body = encodeURIComponent(
-      `Nome: ${name}\nEmail: ${email}\n\nMessaggio:\n${message}`
-    );
-
-    window.location.href = `mailto:info@facciolidraulico.it?subject=${subject}&body=${body}`;
+    form.querySelector("[data-form-status]").textContent = "Messaggio preparato. Completa l'invio nella tua applicazione email.";
+    window.location.href = createEmailUrl(name, email, message);
   });
 }
 
-if (galleryButtons.length) {
-  const galleries = new Set();
-  const scrollAnimations = new WeakMap();
-
-  const updateGalleryButtons = (gallery) => {
-    const frame = gallery.closest(".scroll-gallery-frame");
-    const prev = frame ? frame.querySelector('[data-gallery-scroll="prev"]') : null;
-    const next = frame ? frame.querySelector('[data-gallery-scroll="next"]') : null;
-    const maxScroll = gallery.scrollWidth - gallery.clientWidth;
-
-    if (!prev || !next) {
-      return;
-    }
-
-    prev.disabled = gallery.scrollLeft <= 1;
-    next.disabled = gallery.scrollLeft >= maxScroll - 1;
-  };
-
-  const animateGalleryScroll = (gallery, target) => {
-    const currentAnimation = scrollAnimations.get(gallery);
-
-    if (currentAnimation) {
-      cancelAnimationFrame(currentAnimation);
-    }
-
-    const start = gallery.scrollLeft;
-    const distance = target - start;
-    const duration = 420;
-    const startTime = performance.now();
-
-    const easeInOutCubic = (time) =>
-      time < 0.5 ? 4 * time * time * time : 1 - Math.pow(-2 * time + 2, 3) / 2;
-
-    const step = (now) => {
-      const progress = Math.min((now - startTime) / duration, 1);
-      gallery.scrollLeft = start + distance * easeInOutCubic(progress);
-
-      if (progress < 1) {
-        scrollAnimations.set(gallery, requestAnimationFrame(step));
-      } else {
-        scrollAnimations.delete(gallery);
-        updateGalleryButtons(gallery);
-      }
-    };
-
-    scrollAnimations.set(gallery, requestAnimationFrame(step));
-  };
-
-  galleryButtons.forEach((button) => {
-    const frame = button.closest(".scroll-gallery-frame");
-    const gallery = frame ? frame.querySelector("[data-gallery]") : null;
-
-    if (!gallery) {
-      return;
-    }
-
-    updateGalleryButtons(gallery);
-    galleries.add(gallery);
-
-    button.addEventListener("click", () => {
-      const direction = button.dataset.galleryScroll === "next" ? 1 : -1;
-      const amount = Math.max(gallery.clientWidth * 0.82, 260);
-      const maxScroll = gallery.scrollWidth - gallery.clientWidth;
-      const target = Math.max(0, Math.min(gallery.scrollLeft + amount * direction, maxScroll));
-
-      animateGalleryScroll(gallery, target);
-    });
+document.querySelectorAll("[data-gallery]").forEach((gallery, index) => {
+  const frame = gallery.closest(".scroll-gallery-frame");
+  const prev = frame.querySelector('[data-gallery-scroll="prev"]');
+  const next = frame.querySelector('[data-gallery-scroll="next"]');
+  const items = [...gallery.children];
+  const position = document.createElement("span");
+  position.className = "gallery-position";
+  position.setAttribute("aria-live", "polite");
+  frame.append(position);
+  gallery.id = `gallery-${index + 1}`;
+  gallery.setAttribute("role", "region");
+  [prev, next].forEach(button => {
+    button.setAttribute("aria-controls", gallery.id);
+    button.title = button.getAttribute("aria-label");
   });
 
-  galleries.forEach((gallery) => {
-    gallery.addEventListener("scroll", () => updateGalleryButtons(gallery), { passive: true });
-    window.addEventListener("resize", () => updateGalleryButtons(gallery));
+  const offsets = () => items.map(item => item.offsetLeft - items[0].offsetLeft);
+  const currentIndex = () => {
+    if (gallery.scrollLeft >= gallery.scrollWidth - gallery.clientWidth - 2) return items.length - 1;
+    const points = offsets();
+    return points.reduce((best, x, i) => Math.abs(x - gallery.scrollLeft) < Math.abs(points[best] - gallery.scrollLeft) ? i : best, 0);
+  };
+  const update = () => {
+    prev.disabled = gallery.scrollLeft <= 2;
+    next.disabled = gallery.scrollLeft >= gallery.scrollWidth - gallery.clientWidth - 2;
+    const current = next.disabled ? items.length : currentIndex() + 1;
+    position.textContent = `${current} / ${items.length}`;
+    position.setAttribute("aria-label", `Immagine ${current} di ${items.length}`);
+  };
+  const goTo = (index) => gallery.scrollTo({
+    left: offsets()[Math.max(0, Math.min(index, items.length - 1))],
+    behavior: reducedMotion.matches ? "instant" : "smooth"
+  });
+  prev.addEventListener("click", () => goTo(currentIndex() - 1));
+  next.addEventListener("click", () => goTo(currentIndex() + 1));
+  gallery.addEventListener("keydown", event => {
+    const targets = { ArrowLeft: currentIndex() - 1, ArrowRight: currentIndex() + 1, Home: 0, End: items.length - 1 };
+    if (!(event.key in targets)) return;
+    event.preventDefault();
+    goTo(targets[event.key]);
+  });
+  gallery.addEventListener("scroll", update, { passive: true });
+  new ResizeObserver(update).observe(gallery);
+  update();
+});
+
+const imageLinks = document.querySelectorAll("[data-image-link]");
+if (imageLinks.length) {
+  const dialog = document.createElement("dialog");
+  dialog.className = "image-dialog";
+  dialog.setAttribute("aria-label", "Dettaglio immagine");
+  dialog.innerHTML = '<form method="dialog"><button class="button secondary-dark" aria-label="Chiudi immagine">Chiudi</button></form><img alt=""><p></p>';
+  document.body.append(dialog);
+  const detail = dialog.querySelector("img");
+  const caption = dialog.querySelector("p");
+  imageLinks.forEach(link => link.addEventListener("click", event => {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    const thumbnail = link.querySelector("img");
+    detail.src = link.href;
+    detail.alt = thumbnail.alt;
+    caption.textContent = thumbnail.alt;
+    dialog.showModal();
+  }));
+  dialog.addEventListener("click", event => {
+    const rect = dialog.getBoundingClientRect();
+    if (event.target === dialog && (event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom)) dialog.close();
   });
 }

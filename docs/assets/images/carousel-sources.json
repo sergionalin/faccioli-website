@@ -1,0 +1,33 @@
+{
+  "tool": "Built-in image_gen",
+  "purpose": "Original radiator photos reframed into landscape illustrative scenes; surroundings expanded with AI.",
+  "assets": [
+    {
+      "file": "impianti-termoarredo-arpa-wide.webp",
+      "variants": [
+        "impianti-termoarredo-arpa-wide-480.webp",
+        "impianti-termoarredo-arpa-wide-960.webp"
+      ],
+      "original": "impianti-termoarredo-arpa.jpg",
+      "prompt": "Use case: precise-object-edit. Edit target: the attached portrait interior photo. Produce a landscape 1536x1024, exactly 3:2, version by extending the existing room naturally left and right. Preserve the same slim dark grey vertical tubular radiator, every visible tube, its full height and wall fixings; do not replace or redesign it. Preserve the room's concrete wall, timber floor, metal bookshelf, chair and window aesthetic. The complete radiator must remain visible with clear breathing space above and below. Widen the composition, not the radiator: no stretching, no cropping away its top or bottom. Improve the low-resolution reference into a sharp, natural architectural photograph with realistic textures. The radiator should remain an obvious primary subject slightly left of center, no added radiators or plumbing. No text, labels, logos, watermark, borders, inset photograph, blurred filler or collage. Fill the whole landscape with a continuous believable room."
+    },
+    {
+      "file": "impianti-elettrici-1-wide.webp",
+      "variants": [
+        "impianti-elettrici-1-wide-480.webp",
+        "impianti-elettrici-1-wide-960.webp"
+      ],
+      "original": "impianti-elettrici-1.jpg",
+      "prompt": "Use case: compositing. Edit target: the attached white electric radiator product photograph. Create a landscape 1536x1024, 3:2, professional architectural product photo. Preserve the exact white electric radiator design, seven smooth vertical panels and its integrated control module on the lower right. Keep every edge of the radiator and the full control module visible; do not stretch, redesign, invent extra plumbing or cut off the unit. Place this same product installed on a pale neutral plaster wall in a simple bright apartment, above a light wood floor. Maintain the original three-quarter viewing angle. The whole radiator should occupy the central 55 percent of image width and central 60 percent of height, with enough wall above and floor below. Realistic daylight and contact shadow, sharp clean professional interior photography. No people, cables, extra appliances, pipes, text, logos, overlays, border, collage or blurred side filler. Fill all of the landscape with the real room background. This is an illustrative product setting, not a claimed customer installation."
+    },
+    {
+      "file": "impianti-termoarredo-extra-wide.webp",
+      "variants": [
+        "impianti-termoarredo-extra-wide-480.webp",
+        "impianti-termoarredo-extra-wide-960.webp"
+      ],
+      "original": "impianti-termoarredo-extra.webp",
+      "prompt": "Use case: precise-object-edit. Edit target: the supplied living-room radiator photograph, which has white vertical borders. Reframe as a seamless 1536x1024 landscape 3:2 architectural photo. Remove the white borders and widen the real room rather than stretching or cropping the radiator. Preserve the same tall grey decorative radiator with its distinctive staggered vertical geometric fins, both wall connections, complete top and bottom. Show the ENTIRE radiator with at least 8 percent of image height as margin above and below. Retain the pale wall on the right, dark floral feature wall on the left, low pale sofa with muted green throw, pale curtains, little glass table and floor. Camera can be slightly farther back to fit the complete radiator; radiator slightly right of center, not cut off by any edge. Improve sharpness while retaining realistic materials, geometry, lighting and the restrained original interior style. No new products, text, logos, white padding, blurred filler, border or collage. The whole landscape must be a continuous interior scene."
+    }
+  ]
+}

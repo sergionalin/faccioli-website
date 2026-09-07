@@ -1,0 +1,46 @@
+{
+  "tool": "Built-in image_gen",
+  "purpose": "Illustrative service imagery, not photographs of completed customer projects or the business owner.",
+  "assets": [
+    {
+      "file": "impianti-bagno.webp",
+      "variants": [
+        "impianti-bagno-480.webp",
+        "impianti-bagno-960.webp"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: premium editorial service photo for an Italian domestic plumbing website. Generate landscape 1536x1024, 3:2. Close architectural photograph of a contemporary bathroom: a single polished chrome deck-mounted mixer tap centered over the rear rim of a white ceramic washbasin, in a well-lit real Italian apartment bathroom. Show the COMPLETE tall curved chrome tap, its handle and its spout, and the visible curved basin below, all within the central 45 percent of the width and central 70 percent of the height so the important subject survives a narrow portrait crop. Muted pale grey large-format wall tiles; part of a simple white vertical towel radiator softly visible on one side as secondary context. Camera frontal, around basin level, straightforward realistic professionally installed domestic plumbing, impeccable clean surfaces, natural daylight, sharp chrome detail. Not a catalogue cutout, fill the full image with the real room. No people, no text, no logo, no watermark, no fake technical diagrams, no extra taps, no collage. This is a generic illustrative scene, not a claimed completed project."
+    },
+    {
+      "file": "climatizzazione-interni.webp",
+      "variants": [
+        "climatizzazione-interni-480.webp",
+        "climatizzazione-interni-960.webp"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: sharp professional air-conditioning website hero photograph, landscape 1536x1024, 3:2. A clean white wall-mounted residential air conditioner is the unmistakable primary subject. In a modern light-filled Italian apartment living room, one complete white split AC unit centered horizontally on a very pale grey wall, over a small light grey sofa. The AC occupies approximately the central 45 percent of image width, at 25 to 45 percent of image height. It must be easy to inspect and entirely visible in a narrow centered 6:7 portrait crop as well as a landscape 3:2 crop. Simple linen curtain at far left, small green houseplant at far right, no busy decor. Photograph slightly closer than a room-wide architectural photo, unit is not a tiny dot near the ceiling. Balanced natural daylight, fine realistic wall and textile texture, crisp focus, normal straight architectural lines. Product has a closed smooth front and a subtle real horizontal air outlet; realistic installed appliance, no invented technical parts. No people, text, brand marks, logos, watermarks, borders, collage. Generic illustrative service scene, not a customer installation claim."
+    },
+    {
+      "file": "climatizzazione-esterna.webp",
+      "variants": [
+        "climatizzazione-esterna-480.webp",
+        "climatizzazione-esterna-960.webp"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: professional domestic air-conditioning service website photography, landscape 1536x1024 (3:2). One complete white residential outdoor split air-conditioning condenser on two neat vibration-isolating floor feet on a light-grey tiled terrace by a pale plaster wall in Italy. Three-quarter front view shows circular protective fan grille and subtle ventilation slats on one side. The entire rectangular unit including all four edges and both feet must be visible. Unit centered, occupying the middle 55 percent of the width and 65 percent of the height, plenty of natural terrace background to allow square or 6:7 crops without cutting the unit. Clean but authentic installed appliance, refrigerant lines discreetly disappear into a conduit behind it, no exposed complicated connections. Bright natural daylight, sharp metal and tile texture, very subtle green garden background at the outer edge. No people, no text, no logo, no watermark, no collage, no bokeh, no dramatic lighting. Illustrative installation scene, not a claimed completed customer job."
+    },
+    {
+      "file": "climatizzazione-manutenzione.webp",
+      "variants": [
+        "climatizzazione-manutenzione-480.webp",
+        "climatizzazione-manutenzione-960.webp"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: high-resolution professional HVAC maintenance photograph for an Italian service website, 1536x1024 landscape. An adult professional technician wearing a tidy dark grey work polo is inspecting the removable rectangular mesh dust filter of a white wall-mounted split air conditioner in a clean bright home. Camera at chest height, technician seen in natural side profile on the right, face secondary, looks attentively at the filter held with both anatomically realistic hands in the center. The entire rectangular filter and both hands are fully visible inside the central 55 percent of image width. The air conditioner is in the background on the pale wall, panel lifted normally for filter access. Focus on real filter mesh detail and competent clean work, no exaggerated smile or staged thumbs-up. Body and AC can extend beyond the composition but neither hands nor filter are cut off. Sharp natural indoor daylight, authentic proportions, not cartoonish, not stock-like poses. No unsafe tools or ladder, no cables, no text, logos, watermark, overlay or collage. Generic illustrative maintenance scene, not a portrait of the website owner or a claimed customer visit."
+    },
+    {
+      "file": "climatizzazione-comando.webp",
+      "variants": [
+        "climatizzazione-comando-480.webp",
+        "climatizzazione-comando-960.webp"
+      ],
+      "prompt": "Use case: photorealistic-natural. Asset type: square professional air-conditioning service photograph, 1024x1024. Close-up of an adult hand naturally holding a clean white air-conditioner remote control upright in a light modern living room. The COMPLETE remote control is fully visible, centered, occupying only the central 35 percent of image width and central 60 percent of height, with room around all edges for flexible square crops. Realistic remote: small simple LCD screen reading '22 C', a power button and a few restrained round physical buttons, no company name or branding, no invented long text. Neat natural hand anatomy with thumb resting by the temperature control, not pressing multiple buttons. In the background a pale wall with an unobtrusive white wall-mounted split air conditioner, soft but identifiable; no people or faces, no dramatic bokeh. Natural daylight, crisp detail on the remote and hand, professional clean photography, no text overlay, no watermark, no collage. Generic illustrative climate-control scene, not a specific product endorsement."
+    }
+  ]
+}

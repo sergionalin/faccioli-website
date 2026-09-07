@@ -12,9 +12,10 @@
     <a class="skip-link" href="#contenuto">Vai al contenuto</a>
     <header class="site-header">
       <div class="container header-inner">
-        <a class="brand" href="index.html"><img src="assets/images/logo-new-alpha.png" alt="Facciol'idraulico" width="1489" height="421"></a>
+        <a class="brand" href="index.html"><img src="assets/images/logo-new-alpha.png" alt="Facciol'idraulico" width="1489" height="359"></a>
+        <a class="header-call" href="tel:+393299813520" aria-label="Chiama Gianni Faccioli">Chiama</a>
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" data-menu-toggle><span></span><span></span><span></span><span class="sr-only">Menu</span></button>
-        <nav class="site-nav" id="site-nav" data-nav>
+        <nav class="site-nav" id="site-nav" aria-label="Navigazione principale" data-nav>
           <a href="index.html" data-nav-link>Home</a>
           <a href="impianti-termoidraulici.html" data-nav-link>Impianti termoidraulici</a>
           <a href="impianti-di-climatizzazione.html" data-nav-link>Climatizzazione</a>
@@ -29,35 +30,34 @@
       <section class="contact-section">
         <div class="container contact-grid">
           <div class="contact-copy">
-            <p class="eyebrow">Contatti</p>
-            <h1>Hai bisogno di informazioni o vuoi chiarire un dubbio?</h1>
-            <p>Non esitare a contattarci usando il form qui sotto. Saremo felici di aiutarti e un nostro addetto ti risponder&agrave; nel pi&ugrave; breve tempo possibile.</p>
+            <h1>Parliamo del tuo impianto.</h1>
+            <p>Chiama Gianni o scrivi su WhatsApp per informazioni, manutenzione o un preventivo gratuito. Siamo disponibili dal luned&igrave; al venerd&igrave;, dalle 8:00 alle 17:00.</p>
             <div class="contact-cards">
               <a href="tel:+393299813520"><span>Telefono</span>+39 329 981 3520</a>
               <a class="whatsapp-link" href="https://wa.me/393299813520" target="_blank" rel="noreferrer"><span>WhatsApp</span><img class="whatsapp-icon" src="assets/images/whatsapp-logo.svg" alt="" width="32" height="32">Apri chat</a>
               <a href="mailto:info@facciolidraulico.it"><span>Email</span>info@facciolidraulico.it</a>
               <a href="https://www.google.com/maps/search/?api=1&query=Via%20G.%20Matteo%20Asola%209%2C%20Verona" target="_blank" rel="noreferrer"><span>Posizione</span>Via G. Matteo Asola 9, Verona</a>
-              <div class="contact-info"><span>Pagamenti</span>Accettiamo tutte le principali carte di credito</div>
             </div>
-            <div class="payment-card">
-              <p>Per gli interventi e i servizi disponibili sono accettate le principali carte di credito.</p>
-              <img src="assets/images/pagamenti.jpg" alt="Carte di credito e bancomat accettati" width="800" height="641" loading="lazy">
-            </div>
+            <p class="contact-info">Pagamenti con le principali carte di credito e bancomat.</p>
           </div>
 
-          <form class="contact-form" data-contact-form>
-            <label>Nome <input type="text" name="name" autocomplete="name" required></label>
-            <label>Indirizzo email <input type="email" name="email" autocomplete="email" required></label>
-            <label>Messaggio <textarea name="message" rows="6" required></textarea></label>
-            <button class="button primary" type="submit">Prepara email</button>
-            <p class="form-note">Il form prepara un messaggio email con i dati inseriti.</p>
+          <form class="contact-form" action="mailto:info@facciolidraulico.it" method="post" enctype="text/plain" data-contact-form aria-labelledby="form-title" aria-describedby="email-help">
+            <h2 id="form-title">Scrivici via email</h2>
+            <p class="form-note" id="email-help">Si aprir&agrave; la tua applicazione email con il messaggio pronto da inviare. L'invio va confermato nell'applicazione.</p>
+            <label>Nome <input type="text" name="name" autocomplete="name" maxlength="120" required></label>
+            <label>Indirizzo email <input type="email" name="email" autocomplete="email" inputmode="email" maxlength="254" required></label>
+            <label>Messaggio <textarea name="message" rows="5" maxlength="1800" required></textarea></label>
+            <button class="button primary" type="submit" data-email-submit hidden>Prepara email</button>
+            <noscript><p>Scrivi a <a href="mailto:info@facciolidraulico.it">info@facciolidraulico.it</a> per inviare la tua richiesta.</p></noscript>
+            <p class="form-status" role="status" data-form-status></p>
+            <p class="form-note">Se l'applicazione non si apre, scrivi a <a href="mailto:info@facciolidraulico.it">info@facciolidraulico.it</a> oppure usa WhatsApp. Leggi l'<a href="privacy.html">informativa privacy</a>.</p>
           </form>
         </div>
       </section>
     </main>
     <footer class="site-footer">
       <div class="container footer-grid">
-        <div><h2>Dove siamo</h2><p><a class="footer-address" href="https://www.google.com/maps/search/?api=1&query=Via%20G.%20Matteo%20Asola%209%2C%20Verona" target="_blank" rel="noreferrer">Via G. Matteo Asola 9, Verona</a></p><a class="footer-map" href="https://www.google.com/maps/search/?api=1&query=Via%20G.%20Matteo%20Asola%209%2C%20Verona" target="_blank" rel="noreferrer" aria-label="Apri la mappa di Via G. Matteo Asola 9, Verona"></a></div>
+        <div><h2>Dove siamo</h2><p><a class="footer-address" href="https://www.google.com/maps/search/?api=1&query=Via%20G.%20Matteo%20Asola%209%2C%20Verona" target="_blank" rel="noreferrer">Via G. Matteo Asola 9, Verona</a></p><a class="footer-map" href="https://www.google.com/maps/search/?api=1&query=Via%20G.%20Matteo%20Asola%209%2C%20Verona" target="_blank" rel="noreferrer" aria-label="Apri la mappa di Via G. Matteo Asola 9, Verona">Indicazioni stradali &rarr;</a></div>
         <div><h2>Orari</h2><p>Lun - Ven<br>8:00 - 17:00</p></div>
         <div><h2>Contatti</h2><p><a href="tel:+393299813520">+39 329 981 3520</a><br><a href="mailto:info@facciolidraulico.it">info@facciolidraulico.it</a><br><a class="whatsapp-link" href="https://wa.me/393299813520" target="_blank" rel="noreferrer"><img class="whatsapp-icon" src="assets/images/whatsapp-logo.svg" alt="" width="32" height="32">WhatsApp</a></p></div>
       </div>
