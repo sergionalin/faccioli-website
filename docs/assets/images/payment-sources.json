@@ -1,0 +1,25 @@
+{
+  "purpose": "Payment networks already shown on the original contact page; logos kept in their original colors and proportions.",
+  "originalPage": "https://www.facciolidraulico.it/contatti",
+  "assets": [
+    {
+      "file": "payment-visa.png",
+      "source": "https://cdn.visa.com/v2/assets/images/logos/visa/blue/logo.png",
+      "reference": "https://globalclient.visa.com/brand-mark-ty",
+      "rights": "Visa trademark; acceptance identification only."
+    },
+    {
+      "file": "payment-mastercard.svg",
+      "source": "https://upload.wikimedia.org/wikipedia/commons/a/a4/Mastercard_2019_logo.svg",
+      "reference": "https://commons.wikimedia.org/wiki/File:Mastercard_2019_logo.svg",
+      "rights": "Listed as public-domain geometric artwork on Wikimedia Commons; Mastercard trademark rights remain."
+    },
+    {
+      "file": "payment-bancomat.svg",
+      "source": "https://cdn.prod.website-files.com/681b6eccfc3b299f86073f96/69ea14afd1770af6d3fb0564_BANCOMAT_logos%20%26%20guidelines.zip",
+      "archiveEntry": "BANCOMAT_logos & guidelines/BANCOMAT/BANCOMAT_Logo/BANCOMAT_Logo_RGB/BANCOMAT_Logo_RGB_Azzurro/BANCOMAT_Logo_RGB_Azzurro.svg",
+      "reference": "https://bancomat.it/press-kit",
+      "rights": "BANCOMAT trademark; official RGB artwork, acceptance identification only."
+    }
+  ]
+}

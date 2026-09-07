@@ -1,0 +1,10 @@
+{
+  "provider": "OpenStreetMap embedded map",
+  "address": "Via Giovan Matteo Asola 9, 37131 Verona, Italia",
+  "marker": { "latitude": 45.45352, "longitude": 11.02076 },
+  "coordinateSource": "https://www.reteimprese.it/pompe-idrauliche/verona/azienda/3831932",
+  "coordinateSourceDescription": "Coordinates published alongside Gianni Faccioli Termoidraulica's listing at the corrected address; not a surveyed entrance position.",
+  "embedDocumentation": "https://wiki.openstreetmap.org/wiki/Export#Embeddable_HTML",
+  "originalPage": "https://www.facciolidraulico.it/contatti",
+  "migrationNote": "The original Webador-managed map used Via F. Bianchini 13. Its coordinates and platform credentials are not reused. This embed needs no API token."
+}
