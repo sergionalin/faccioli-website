@@ -1,0 +1,33 @@
+{
+  "tool": "Built-in image_gen",
+  "purpose": "Wider 3:2 illustrative boiler-carousel photos, reframed from the originals. Originals retained unchanged.",
+  "assets": [
+    {
+      "file": "caldaie-fotorama-2-wide.webp",
+      "variants": [
+        "caldaie-fotorama-2-wide-480.webp",
+        "caldaie-fotorama-2-wide-960.webp"
+      ],
+      "original": "caldaie-fotorama-2.jpg",
+      "prompt": "Use case: precise-object-edit. Edit target: attached boiler-installation photograph. Reframe this exact photograph as a sharp 1536x1024 landscape image, exactly 3:2, for a plumbing website carousel. Extend the boiler room naturally to the left and right and pull the viewpoint back just enough to preserve all visible installation details. Keep the SAME THREE silver-grey wall-hung boilers, their casings and lower control panels, their white shared exhaust/flue along the ceiling, and the grey insulated hydraulic manifold. Do not redesign, move, duplicate or invent heating equipment. Keep the complete existing boiler casings and the visible flue in the frame with a small amount of breathing room above and below; naturally finish the immediate room background near the bottom where needed. Retain white plaster walls, grey concrete ceiling, actual perspective and believable soft daylight. Improve clarity and exposure conservatively, without turning it into a showroom or changing materials. Fill the entire 3:2 rectangle with continuous room photography, not blank margins, blurred extensions, a collage or an inset. No new people, extra equipment, text overlays, labels, logos or watermarks. Preserve existing equipment markings where visible."
+    },
+    {
+      "file": "caldaie-fotorama-6-wide.webp",
+      "variants": [
+        "caldaie-fotorama-6-wide-480.webp",
+        "caldaie-fotorama-6-wide-960.webp"
+      ],
+      "original": "caldaie-fotorama-6.jpg",
+      "prompt": "Use case: precise-object-edit. Edit target: the attached portrait boiler-room photograph. Produce a landscape 1536x1024 image, exactly 3:2, by widening the SAME room on both sides and stepping the camera back enough to keep the entire installation. Preserve the original silver-grey Modula wall-hung boiler with its yellow trim on the left, the tall white floor-standing tank below it, the shiny metal exhaust pipe overhead, the red expansion vessel at upper right, the little blue vessel, and the grey insulated pipe manifold on the right. The full wall boiler, tank from top to bottom, overhead exhaust and red vessel must all remain within the frame with breathing space, not clipped. Do not replace, redesign, add, remove or duplicate plumbing equipment. Preserve its functional arrangement, connections and perspective as closely as possible; only extend the surrounding pale grey concrete/plaster walls and tiled floor naturally. Retain a realistic modest boiler room, improve clarity and exposure without changing it into a showroom. Original subject grouping should fill the central 70 percent of the landscape with enough complete room around it. No white/colored padding, borders, blurry side panels, inset photograph, montage, added people, text overlays or watermark. This is a photograph reframing for an illustrative service carousel, not a technical schematic."
+    },
+    {
+      "file": "caldaie-manutenzione-wide.webp",
+      "variants": [
+        "caldaie-manutenzione-wide-480.webp",
+        "caldaie-manutenzione-wide-960.webp"
+      ],
+      "original": "servizi-riscaldamento-1.jpg",
+      "prompt": "Use case: identity-preserve. Edit target: attached low-resolution square photo of a boiler technician. Create a sharp natural professional photograph at 1536x1024, exactly landscape 3:2, reframing the SAME scene by extending the room sideways and slightly widening the camera view, not stretching or cropping the person. Preserve the adult male technician's general appearance, short dark brown hair, red-and-blue checked work shirt, blue work trousers, bent-forward pose facing left, and both hands carefully working below the opened white wall-hung boiler. Preserve the boiler's open front, lowered control panel with round dials and small blue display, and recognizable internal components; do not invent extra appliances or change it into an air conditioner. Keep the technician's complete head, working hands and the boiler's open service area clearly inside the frame with breathing room. Improve the visibly blurred source into believable detail with realistic skin, fabric, five-fingered hands, sensible tools and plumbing, clean natural light. Keep the modest light neutral utility-room surroundings; avoid dramatic cinematic treatment. The primary equipment and the technician should jointly fill the central 80 percent of the image. No text overlays, added branding, watermarks, white borders, blurred filler panels or collage. This is an illustrative maintenance photograph, not technical instruction."
+    }
+  ]
+}
