@@ -1,0 +1,8 @@
+# Public pages are available to search crawlers, including AI search.
+User-agent: *
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+Sitemap: https://facciolidraulico.it/sitemap.xml
